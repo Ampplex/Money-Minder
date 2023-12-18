@@ -3,8 +3,16 @@
     "name": "Money-Minder",
     "slug": "Money-Minder",
     "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ]
+    "icon": "./assets/App-logo2.png",
+    "assetBundlePatterns": ["**/*"],
+    "splash": {
+      "image": "./assets/splashScreen.png",
+      "resizeMode": "cover"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "0f2108df-ba68-4d14-a210-6cdeb6760080"
+      }
+    }
   }
 }
