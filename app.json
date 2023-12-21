@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "MoneyMinder",
+    "slug": "MoneyMinder",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
