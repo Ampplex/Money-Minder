@@ -3,8 +3,18 @@
     "name": "MoneyMinder",
     "slug": "MoneyMinder",
     "version": "1.0.0",
+    "icon": "./assets/ExpenseLogo.png",
+    "splash": {
+      "image": "./assets/splashScreen.png",
+      "resizeMode": "cover"
+    },
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "d654c1c9-8b08-4dd2-bcaa-813596186e41"
+      }
+    }
   }
 }
