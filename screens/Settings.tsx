@@ -4,15 +4,20 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { Dropdown } from "react-native-element-dropdown";
 import Currency_Context from "../context/LoginInfo/Currency_Context";
 
-const data = [
+interface Data {
+  label: string;
+  value: string;
+}
+
+const data: Data[] = [
   { label: "INR", value: "INR" },
   { label: "USD", value: "dollar" },
 ];
 
 const Settings = ({ navigation }) => {
-  const [isFocus, setIsFocus] = useState(false);
+  const [isFocus, setIsFocus] = useState<boolean>(false);
   const { currency, getAmount, changeCurrency } = useContext(Currency_Context);
-  const [value, setValue] = useState(currency);
+  const [value, setValue] = useState<string>(currency);
 
   return (
     <View style={styles.container}>

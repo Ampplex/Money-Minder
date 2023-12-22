@@ -103,14 +103,20 @@ const styles = StyleSheet.create({
   dollarBtn: {
     position: "absolute",
     left: 50,
+    // backgroundColor: "#fafa",
+    padding: 13,
   },
   profileBtn: {
     position: "absolute",
     left: 127,
+    padding: 13,
+    // backgroundColor: "#fafa",
   },
   settingsBtn: {
     position: "absolute",
     left: 210,
+    padding: 13,
+    // backgroundColor: "#fafa",
   },
   AddBtn: {
     width: 62,

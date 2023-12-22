@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import LoginInfo_Context from "./LoginInfo_Context";
-import { getItemAsync } from "expo-secure-store";
-import { decode as atob } from "base-64";
 
-const LoginInfo_State = (props) => {
-  const [token, setToken] = useState("");
+const LoginInfo_State = (props: any) => {
+  const [token, setToken] = useState<string>("");
 
-  async function setMyToken(token) {
+  async function setMyToken(token: string) {
     setToken(token);
   }
 

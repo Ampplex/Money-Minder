@@ -47,27 +47,17 @@ const Graph = ({ route, navigation }) => {
 
   const closeActionSheet = () => {
     actionSheetRef.current?.hide();
+    setTimeout(() => {
+      setShowPredictedVal(false);
+    }, 100);
   };
 
-  const toggle = () => {
-    if (!displayVal) {
-      speak("Please select a date");
-      return;
-    }
-
-    getExpensePrediction();
+  const toggle = async () => {
+    await getExpensePrediction();
+    console.log(expense);
 
     setTimeout(() => {
       setShowPredictedVal(true);
-      if (expense == null) {
-        speak("Please select a date");
-      } else {
-        speak(
-          `Your expense on ${title} will be ${Number(
-            getAmount(expense)
-          ).toFixed(2)} ${currency == "dollar" ? "$" : "₹"}`
-        );
-      }
     }, 2000);
   };
 
@@ -354,8 +344,12 @@ const Graph = ({ route, navigation }) => {
         <TouchableOpacity
           style={styles.predictBtn}
           onPress={() => {
-            openActionSheet();
-            toggle();
+            if (!displayVal) {
+              speak("Please select a date");
+            } else {
+              openActionSheet();
+              toggle();
+            }
           }}
         >
           <Text
@@ -409,6 +403,11 @@ const Graph = ({ route, navigation }) => {
                   : `Your expense on ${title} will be ${Number(
                       getAmount(expense)
                     ).toFixed(2)} ${currency == "dollar" ? "$" : "₹"}`}
+                {speak(
+                  `Your expense on ${title} will be ${Number(
+                    getAmount(expense)
+                  ).toFixed(2)} ${currency == "dollar" ? "$" : "₹"}`
+                )}
               </Text>
               <TouchableOpacity
                 style={styles.goBack}

@@ -15,7 +15,12 @@ import queryString from "query-string";
 import LoginInfo_Context from "../context/LoginInfo/LoginInfo_Context";
 import Currency_Context from "../context/LoginInfo/Currency_Context";
 
-const data = [
+interface Data {
+  label: string;
+  value: string;
+}
+
+const data: Data[] = [
   { label: "Groceries", value: "Groceries" },
   { label: "Health", value: "Health" },
   { label: "Food", value: "Food" },
@@ -31,7 +36,7 @@ const data = [
 
 const AddExpenses = () => {
   const [value, setValue] = useState(null);
-  const [isFocus, setIsFocus] = useState(false);
+  const [isFocus, setIsFocus] = useState<boolean>(false);
   const [amount, setAmount] = useState<number>(null);
   const { token } = useContext(LoginInfo_Context);
   const { currency } = useContext(Currency_Context);

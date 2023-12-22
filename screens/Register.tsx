@@ -44,7 +44,8 @@ const Register = ({ navigation }) => {
     email: string,
     password: string
   ) => {
-    const apiUrl = "https://money-minder-lndt.onrender.com/api/auth/signup/";
+    const apiUrl: string =
+      "https://money-minder-lndt.onrender.com/api/auth/signup/";
 
     // Create form data
     const data: Data = {
